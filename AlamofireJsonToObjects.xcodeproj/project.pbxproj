@@ -144,7 +144,8 @@
 		7F193CF71B36E628000C1C34 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = evict;
 				TargetAttributes = {
 					7F193D131B36E629000C1C34 = {
@@ -265,6 +266,7 @@
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -334,6 +336,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = AlamofireJsonToObjectsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "nl.evict.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = AlamofireJsonToObjectsTests;
 			};
 			name = Debug;
@@ -345,6 +348,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = AlamofireJsonToObjectsTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "nl.evict.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = AlamofireJsonToObjectsTests;
 			};
 			name = Release;

@@ -41,11 +41,11 @@ class AlamofireJsonToObjectsTests: XCTestCase {
             let URL = "http://raw.githubusercontent.com/evermeer/AlamofireJsonToObjects/master/AlamofireJsonToObjectsTests/sample_json"
             let expectation = expectationWithDescription("\(URL)")
             
-            Alamofire.request(.GET, URL, parameters: nil)
+            Alamofire.request(.GET, URLString: URL, parameters: nil)
                 .responseObject { (response: WeatherResponse?, error: NSError?) in
                 
                 expectation.fulfill()
-                println("\(response?.description)")
+                print("\(response?.description)")
                 XCTAssertNotNil(response, "Response should not be nil")
                 XCTAssertNotNil(response?.location, "Location should not be nil")
                 XCTAssertNotNil(response?.three_day_forecast, "ThreeDayForcast should not be nil")
@@ -56,7 +56,7 @@ class AlamofireJsonToObjectsTests: XCTestCase {
                 }
             }
             
-            waitForExpectationsWithTimeout(10, handler: { (error: NSError!) -> Void in
+            waitForExpectationsWithTimeout(10, handler: { (error: NSError?) -> Void in
                 XCTAssertNil(error, "\(error)")
             })
         }
@@ -68,8 +68,8 @@ class AlamofireJsonToObjectsTests: XCTestCase {
             let URL = "http://raw.githubusercontent.com/evermeer/AlamofireJsonToObjects/master/AlamofireJsonToObjectsTests/sample_json"
             let expectation = expectationWithDescription("\(URL)")
             
-            Alamofire.request(.GET, URL, parameters: nil)
-                .responseObject { (request: NSURLRequest, HTTPURLResponse: NSHTTPURLResponse?, response: WeatherResponse?, data: AnyObject?, error: NSError?) in
+            Alamofire.request(.GET, URLString: URL, parameters: nil)
+                .responseObject { (request: NSURLRequest?, HTTPURLResponse: NSHTTPURLResponse?, response: WeatherResponse?, data: AnyObject?, error: NSError?) in
                     
                 expectation.fulfill()
                 
@@ -84,7 +84,7 @@ class AlamofireJsonToObjectsTests: XCTestCase {
                 }
             }
             
-            waitForExpectationsWithTimeout(10, handler: { (error: NSError!) -> Void in
+            waitForExpectationsWithTimeout(10, handler: { (error: NSError?) -> Void in
                 XCTAssertNil(error, "\(error)")
             })
         }
@@ -94,7 +94,7 @@ class AlamofireJsonToObjectsTests: XCTestCase {
             let URL = "http://raw.githubusercontent.com/evermeer/AlamofireJsonToObjects/master/AlamofireJsonToObjectsTests/sample_array_json"
             let expectation = expectationWithDescription("\(URL)")
             
-            Alamofire.request(.GET, URL, parameters: nil)
+            Alamofire.request(.GET, URLString: URL, parameters: nil)
                 .responseArray { (response: [Forecast]?, error: NSError?) in
                 expectation.fulfill()
                 
@@ -107,7 +107,7 @@ class AlamofireJsonToObjectsTests: XCTestCase {
                 }
             }
             
-            waitForExpectationsWithTimeout(10, handler: { (error: NSError!) -> Void in
+            waitForExpectationsWithTimeout(10, handler: { (error: NSError?) -> Void in
                 XCTAssertNil(error, "\(error)")
             })
         }
@@ -117,8 +117,8 @@ class AlamofireJsonToObjectsTests: XCTestCase {
             let URL = "http://raw.githubusercontent.com/evermeer/AlamofireJsonToObjects/master/AlamofireJsonToObjectsTests/sample_array_json"
             let expectation = expectationWithDescription("\(URL)")
             
-            Alamofire.request(.GET, URL, parameters: nil)
-                .responseArray { (request: NSURLRequest, HTTPURLResponse: NSHTTPURLResponse?, response: [Forecast]?, data: AnyObject?, error: NSError?) in
+            Alamofire.request(.GET, URLString: URL, parameters: nil)
+                .responseArray { (request: NSURLRequest?, HTTPURLResponse: NSHTTPURLResponse?, response: [Forecast]?, data: AnyObject?, error: NSError?) in
                 expectation.fulfill()
                 
                 XCTAssertNotNil(response, "Response should not be nil")
@@ -130,7 +130,7 @@ class AlamofireJsonToObjectsTests: XCTestCase {
                 }
             }
             
-            waitForExpectationsWithTimeout(10, handler: { (error: NSError!) -> Void in
+            waitForExpectationsWithTimeout(10, handler: { (error: NSError?) -> Void in
                 XCTAssertNil(error, "\(error)")
             })
         }

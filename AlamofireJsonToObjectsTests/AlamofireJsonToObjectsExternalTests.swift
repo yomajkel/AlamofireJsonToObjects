@@ -56,11 +56,11 @@ class AlamofireJsonToObjectsExternalTests: XCTestCase {
         let URL = "http://raw.githubusercontent.com/evermeer/AlamofireJsonToObjects/master/AlamofireJsonToObjectsTests/sample_users_array_json"
         let expectation = expectationWithDescription("\(URL)")
         
-        Alamofire.request(.GET, URL, parameters: nil)
+        Alamofire.request(.GET, URLString: URL, parameters: nil)
             .responseArray { (response: [User]?, error: NSError?) in
                 
                 expectation.fulfill()
-                println("\(response?.description)")
+                print("\(response?.description)")
                 
                 XCTAssertTrue(response?.count == 10, "We should have 10 users")
                 
@@ -82,9 +82,9 @@ class AlamofireJsonToObjectsExternalTests: XCTestCase {
                 } else {
                     XCTFail("No 3rd user in response")
                 }
-        }
+        }        
         
-        waitForExpectationsWithTimeout(10, handler: { (error: NSError!) -> Void in
+        waitForExpectationsWithTimeout(10, handler: { (error: NSError?) -> Void in
             XCTAssertNil(error, "\(error)")
         })
     }

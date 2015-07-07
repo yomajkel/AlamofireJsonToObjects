@@ -3,8 +3,24 @@ PODS:
   - EVReflection (2.2.0)
 
 DEPENDENCIES:
-  - Alamofire
-  - EVReflection
+  - Alamofire (from `https://github.com/Alamofire/Alamofire.git`, branch `swift-2.0`)
+  - EVReflection (from `https://github.com/evermeer/EVReflection.git`, branch `Swift2`)
+
+EXTERNAL SOURCES:
+  Alamofire:
+    :branch: swift-2.0
+    :git: https://github.com/Alamofire/Alamofire.git
+  EVReflection:
+    :branch: Swift2
+    :git: https://github.com/evermeer/EVReflection.git
+
+CHECKOUT OPTIONS:
+  Alamofire:
+    :commit: fd71afb3a0af2042b9f05a6b9f29317ad4903703
+    :git: https://github.com/Alamofire/Alamofire.git
+  EVReflection:
+    :commit: d317e65b7135070736d189bbe5364413b7fb920b
+    :git: https://github.com/evermeer/EVReflection.git
 
 SPEC CHECKSUMS:
   Alamofire: 5550bf0b575ed1a4bf9be572f9463e1015cc169e
